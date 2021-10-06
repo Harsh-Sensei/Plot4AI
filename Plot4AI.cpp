@@ -1,7 +1,8 @@
 /*
 Name:Harsh Shah
+Institute: Indian Institute of Technology
 Roll no.:200050049
-Plot 4 game with AI
+Plot 4 game with inbuilt AI employed using minimax algorithm
 
 Compile using "fltk-config --compile Plot4AI"
 Run using "./Plot4"
@@ -45,7 +46,8 @@ const int board_width=::w-200,board_height=::h-200;
 const int xspacing=float(::w-200)/(::x),yspacing=float(::h-200)/(::y);
 int moves=0;
 int data[7][7];
-false_fstream file;
+false_fstream file;//change false_stream to fstream, and us file.open("file_name") 
+ 				   // to output the decision making process of minimax algorithm
 
 
 //function to wait for given amount of time
@@ -412,11 +414,7 @@ int main(int argc, char *argv[]){
 	window = new Fl_Window (w,h,"Plot4");
 	window->color(FL_WHITE);
 	fl_font(1,30);
-	/*file.open("gameBugData.txt",ios::out);
-	if(!file){
-		cout<<"Bad Luck"<<endl;
-		return 0;
-	}*/
+	
 	try{
 		GAME sample(true);
 	}catch(int c){
